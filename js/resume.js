@@ -4,7 +4,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // 获取DOM元素
     const resumeForm = document.getElementById('resumeForm');
-    const photoInput = document.getElementById('photo');
+    const photoImg = document.getElementById('photo');
+
     const photoLabel = document.getElementById('photoLabel');
     const photoPreview = document.getElementById('photoPreview');
     const saveBtn = document.getElementById('saveBtn');
@@ -24,9 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // 使用FileReader读取图片并预览
             const reader = new FileReader();
             reader.onload = function(e) {
+                photoImg.src = e.target.result;
+                photoImg.style.display = 'block';
                 photoPreview.style.backgroundImage = `url(${e.target.result})`;
-                photoPreview.style.display = 'block';
-                photoLabel.style.display = 'none';
+                photoPreview.style.display = 'none'; // 直接使用img标签显示，不使用背景图预览
+                photoLabel.textContent = '更换照片';
             };
             reader.readAsDataURL(file);
         }
@@ -123,8 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // 重置表单
             resumeForm.reset();
             // 重置照片预览
+            photoImg.src = 'img/photo.png';
             photoPreview.style.display = 'none';
-            photoLabel.style.display = 'block';
+            photoLabel.textContent = '上传照片';
             photoPreview.style.backgroundImage = 'none';
         }
     });
