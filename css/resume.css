@@ -78,6 +78,19 @@ tr:nth-child(7), tr:nth-child(8) {
     position: relative;
 }
 
+/* 照片图像样式 */
+#photo {
+    max-width: 200px;
+    max-height: 240px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+
 /* 高亮行样式 */
 .highlighted-row td {
     border-bottom: 2px solid #333;
@@ -106,19 +119,6 @@ textarea {
 textarea {
     width: 95%;
     resize: none;
-}
-
-/* 照片上传样式 */
-#photoLabel {
-    display: block;
-    width: 100px;
-    height: 120px;
-    line-height: 120px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px dashed #999;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.5);
 }
 
 #photoPreview {
