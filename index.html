@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>3.3个人简历表格</title>
+		<link rel="stylesheet" href="css/resume.css">
+	</head>
+	<body>
+		<div class="container">
+			<form id="resumeForm">
+				<table border="1" cellspacing="0" cellpadding="0">
+					<caption>个人简历</caption>
+					<tr>
+						<td>姓名</td>
+						<td class="leaf-cell"><input type="text" name="name" id="name"></td>
+						<td>性别</td>
+						<td>
+							<select name="gender" id="gender">
+								<option value=""></option>
+								<option value="男">男</option>
+								<option value="女">女</option>
+							</select>
+						</td>
+						<td>年龄</td>
+						<td><input type="number" name="age" id="age" min="16" max="100"></td>
+						<td rowspan="4" class="photo-cell">
+							<input type="file" name="photo" id="photo" accept="image/*" style="display: none;">
+							<label for="photo" id="photoLabel">点击上传照片</label>
+							<div id="photoPreview"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>籍贯</td>
+						<td class="leaf-cell"><input type="text" name="hometown" id="hometown"></td>
+						<td>联系电话</td>
+						<td><input type="tel" name="phone" id="phone"></td>
+						<td>电子邮箱</td>
+						<td><input type="email" name="email" id="email"></td>
+					</tr>
+					<tr>
+						<td>学历</td>
+						<td>
+							<select name="education" id="education">
+								<option value="">请选择</option>
+								<option value="高中">高中</option>
+								<option value="专科">专科</option>
+								<option value="本科">本科</option>
+								<option value="硕士">硕士</option>
+								<option value="博士">博士</option>
+							</select>
+						</td>
+						<td>健康状况</td>
+						<td>
+							<select name="health" id="health">
+								<option value="">请选择</option>
+								<option value="良好">良好</option>
+								<option value="一般">一般</option>
+							</select>
+						</td>
+						<td>婚姻状况</td>
+						<td>
+							<select name="marital" id="marital">
+								<option value="">请选择</option>
+								<option value="未婚">未婚</option>
+								<option value="已婚">已婚</option>
+							</select>
+						</td>
+					</tr>
+					<tr class="highlighted-row">
+						<td>求职意向</td>
+						<td><input type="text" name="jobIntention" id="jobIntention"></td>
+						<td>专业</td>
+						<td class="leaf-cell"><input type="text" name="major" id="major"></td>
+						<td>毕业院校</td>
+						<td><input type="text" name="school" id="school"></td>
+					</tr>
+					<tr>
+						<td>技能证书</td>
+						<td colspan="6" class="leaf-cell">
+							<textarea name="skills" id="skills" rows="3"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>个人特长与爱好</td>
+						<td colspan="6" class="leaf-cell">
+							<textarea name="hobbies" id="hobbies" rows="3"></textarea>
+						</td>
+					</tr>
+					<tr class="project-row">
+						<td>项目经历</td>
+						<td colspan="6" class="multi-leaf-cell">
+							<textarea name="projects" id="projects" rows="6"></textarea>
+						</td>
+					</tr>
+					<tr class="self-eval-row">
+						<td>自我评价</td>
+						<td colspan="6" class="multi-leaf-cell">
+							<textarea name="selfEvaluation" id="selfEvaluation" rows="6"></textarea>
+						</td>
+					</tr>
+				</table>
+				<div class="button-group">
+					<button type="submit" id="saveBtn">保存简历</button>
+					<button type="button" id="printBtn">打印简历</button>
+					<button type="reset" id="resetBtn">重置信息</button>
+				</div>
+			</form>
+		</div>
+		<script src="js/resume.js"></script>
+	</body>
+</html>
